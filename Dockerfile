@@ -67,6 +67,7 @@ FROM php-base as osticket
 
 ## Copy osTicket files
 COPY --from=fetch-osticket /app/upload/ /var/www/html/
+COPY ./plugins /var/www/html/include/plugins
 
 ## Copy sample config file
 COPY ./include/ost-sampleconfig.php /var/www/html/include/ost-config.php

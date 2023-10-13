@@ -11,8 +11,7 @@ Vagrantfile
 # Staging directory used for packaging script
 stage
 
-# Ignore packaged plugins and language packs
-*.phar
+
 
 # Ignore mPDF temp files
 include/mpdf/ttfontdata
@@ -21,3 +20,7 @@ nbproject/
 
 # Ignore PhpStorm project files
 .idea/
+!plugins/*.phar
+
+# Ignore packaged plugins and language packs
+*.phar
