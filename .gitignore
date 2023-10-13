@@ -22,5 +22,3 @@ nbproject/
 .idea/
 !plugins/*.phar
 
-# Ignore packaged plugins and language packs
-*.phar
