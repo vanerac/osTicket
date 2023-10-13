@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./osTicket:/var/www/html/osTicket
+      - ./config:/var/www/html/osTicket/include
+    depends_on:
+      - db
+
+  db:
+    image: arm64v8/mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: osticket
+      MYSQL_USER: osticket
+      MYSQL_PASSWORD: osticketpassword
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+  config:
